@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吳曉琪醫學教育職涯發展規劃報告書</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --tertiary-color: #fbbc05;
+            --quaternary-color: #ea4335;
+            --mentor-color: #ff7043;
+            --light-bg: #f8f9fa;
+            --dark-text: #202124;
+            --medium-text: #5f6368;
+            --light-text: #dadce0;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .tab-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(66, 133, 244, 0.3);
+        }
+        
+        /* 特殊樣式為奇美AI Mentor建議頁籤 */
+        .tab-btn[data-tab="mentor"] {
+            color: var(--mentor-color);
+            border: 2px solid var(--mentor-color);
+        }
+        
+        .tab-btn[data-tab="mentor"]:hover {
+            background-color: var(--mentor-color);
+            color: white;
+        }
+        
+        .tab-btn[data-tab="mentor"].active {
+            background-color: var(--mentor-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(255, 112, 67, 0.3);
+        }
+        
+        .tab-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px var(--shadow);
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .tab-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--light-text);
+            padding-bottom: 10px;
+        }
+        
+        /* 奇美AI Mentor建議頁籤的特殊標題顏色 */
+        #mentor h2 {
+            color: var(--mentor-color);
+            border-bottom: 2px solid var(--mentor-color);
+        }
+        
+        .tab-content h3 {
+            color: var(--secondary-color);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+        
+        .tab-content h4 {
+            color: var(--medium-text);
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        .tab-content p, .tab-content li {
+            margin-bottom: 15px;
+            color: var(--medium-text);
+        }
+        
+        .tab-content ul, .tab-content ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .tab-content li {
+            margin-bottom: 8px;
+        }
+        
+        .career-path {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            margin: 20px 0;
+        }
+        
+        .career-stage {
+            display: flex;
+            margin: 15px 0;
+            align-items: center;
+        }
+        
+        .career-stage-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .career-stage-content {
+            flex-grow: 1;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            padding: 0 10px;
+            position: relative;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -50%;
+            width: 100%;
+            height: 3px;
+            background-color: var(--light-text);
+            z-index: 1;
+        }
+        
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--primary-color);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .grid-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .grid-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .strategy-section {
+            margin: 25px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        
+        .data-driven {
+            background-color: rgba(66, 133, 244, 0.1);
+            border-left-color: var(--primary-color);
+        }
+        
+        .education {
+            background-color: rgba(52, 168, 83, 0.1);
+            border-left-color: var(--secondary-color);
+        }
+        
+        .collaboration {
+            background-color: rgba(251, 188, 5, 0.1);
+            border-left-color: var(--tertiary-color);
+        }
+        
+        .system {
+            background-color: rgba(234, 67, 53, 0.1);
+            border-left-color: var(--quaternary-color);
+        }
+        
+        .improvement {
+            background-color: rgba(103, 58, 183, 0.1);
+            border-left-color: #673ab7;
+        }
+        
+        .global {
+            background-color: rgba(0, 150, 136, 0.1);
+            border-left-color: #009688;
+        }
+        
+        .strategy-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: inherit;
+        }
+        
+        .strategy-section h3 {
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+        }
+        
+        .career-vision {
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: center;
+        }
+        
+        .vision-step {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            position: relative;
+            background-color: #fff;
+            box-shadow: 0 2px 6px var(--shadow);
+        }
+        
+        .vision-step:not(:last-child)::after {
+            content: '↑';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .vision-step:nth-child(1) {
+            background-color: #e8f4fc;
+        }
+        
+        .vision-step:nth-child(2) {
+            background-color: #e0f7fa;
+        }
+        
+        .vision-step:nth-child(3) {
+            background-color: #e0f2f1;
+        }
+        
+        .vision-step:nth-child(4) {
+            background-color: #e8eaf6;
+        }
+        
+        .vision-step h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            margin: 20px 0;
+        }
+        
+        .mentor-tip {
+            background-color: #fff3e0;
+            border-left: 4px solid var(--mentor-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .mentor-tip strong {
+            color: var(--mentor-color);
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .timeline {
+                flex-direction: column;
+            }
+            
+            .timeline-item {
+                margin-bottom: 30px;
+            }
+            
+            .timeline-item:not(:last-child)::after {
+                top: auto;
+                bottom: -15px;
+                right: auto;
+                left: 40px;
+                width: 3px;
+                height: 30px;
+            }
+            
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>吳曉琪醫學教育職涯發展規劃報告書</h1>
+            <h2>願景：協助醫學教育數位轉型與成為生成式AI應用專家</h2>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="profile">個人專業檔案</button>
+            <button class="tab-btn" data-tab="competencies">核心競爭力</button>
+            <button class="tab-btn" data-tab="goals">短中長期職涯目標</button>
+            <button class="tab-btn" data-tab="strategies">醫院學習型照護體系戰略</button>
+            <button class="tab-btn" data-tab="second-curve">人生第二曲線</button>
+            <button class="tab-btn" data-tab="vision">十年願景</button>
+            <button class="tab-btn" data-tab="amee">Why AMEE?</button>
+            <button class="tab-btn" data-tab="career-vision">職涯發展願景</button>
+            <button class="tab-btn" data-tab="conclusion">結語</button>
+            <button class="tab-btn" data-tab="mentor">奇美AI Mentor建議</button>
+        </div>
+        
+        <!-- 個人專業檔案 -->
+        <div class="tab-content active" id="profile">
+            <h2>1. 個人專業檔案</h2>
+            
+            <h3>基本資料</h3>
+            <p><strong>姓名</strong>：吳曉琪<br>
+            <strong>現職</strong>：教學中心 教學行政管理員<br>
+            <strong>專長</strong>：醫學教育行政、數位教學推動、GenAI 應用、課程設計</p>
+            
+            <h3>背景簡介</h3>
+            <p>作為一位醫學教育逾十年的教育引路人，致力於 PGY 訓練計畫、醫學教育系統建置及課程評鑑等工作。近年轉向數位轉型與人工智慧應用，積極參與生成式 AI 影片製作教學，以及國際醫學教育會議（如 AMEE）。2024年參加瑞士巴塞爾舉辦的歐洲醫學教育年會後，開始聚焦於數位轉型與生成式 AI 在醫學教育中的應用。</p>
+        </div>
+        
+        <!-- 核心競爭力 -->
+        <div class="tab-content" id="competencies">
+            <h2>2. 核心競爭力</h2>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
+                    <h3>教學品質的制度化與數據化管理</h3>
+                    <ul>
+                        <li>建立標準化評估流程與數據追蹤機制</li>
+                        <li>運用 Power Automate、Forms、SharePoint 等整合性工具實現自動化管理</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(52, 168, 83, 0.1); border-left: 4px solid var(--secondary-color);">
+                    <h3>醫學教育的創新設計與落實執行</h3>
+                    <ul>
+                        <li>課程設計從 needs assessment 到 curriculum mapping 的系統性方法</li>
+                        <li>應用 CBME 及 workplace-based assessment 等先進教育模式</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(251, 188, 5, 0.1); border-left: 4px solid var(--tertiary-color);">
+                    <h3>生成式 AI 影片應用於臨床衛教</h3>
+                    <ul>
+                        <li>完成教學中心主辦影片教學課程</li>
+                        <li>協助藥劑部、護理部、營養科等單位自辦課程</li>
+                        <li>投稿 AMEE 主題「Digital Skills Training Program for Healthcare Professionals」</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(234, 67, 53, 0.1); border-left: 4px solid var(--quaternary-color);">
+                    <h3>支持年輕醫師的職涯導引規劃</h3>
+                    <ul>
+                        <li>設計尊重醫師自主性與心理安全的導師制度</li>
+                        <li>建立「醫學教育人才發展架構」引導職涯發展</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 短中長期職涯目標 -->
+        <div class="tab-content" id="goals">
+            <h2>3. 短中長期職涯目標</h2>
+            
+            <div class="career-path">
+                <div class="career-stage">
+                    <div class="career-stage-icon">短</div>
+                    <div class="career-stage-content">
+                        <h3>短期目標 (1年內)</h3>
+                        <h4>角色：數位教育轉型推動者 & AI應用實踐者</h4>
+                        <h4>目標：</h4>
+                        <ul>
+                            <li>完成研究所課業，建立AI輔助教學種子教師能力評估項目</li>
+                            <li>推動生成式AI影片教學工作坊</li>
+                        </ul>
+                        <h4>領域：</h4>
+                        <ol>
+                            <li>生成式AI輔助how-code平台</li>
+                            <li>PGY學員評核系統優化E-portfolio</li>
+                            <li>教學活動成效可視化分析</li>
+                            <li>自動化表單應用Microsoft Power Platform</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="career-stage">
+                    <div class="career-stage-icon">中</div>
+                    <div class="career-stage-content">
+                        <h3>中期目標 (2-3年)</h3>
+                        <h4>角色：教育創新/學習型醫學教育者</h4>
+                        <h4>目標：</h4>
+                        <ul>
+                            <li>發表醫學教育成就改善學習相關研究論文</li>
+                            <li>推動年輕醫師職涯支持計畫</li>
+                        </ul>
+                        <h4>領域：</h4>
+                        <ul>
+                            <li>CBME數位導入與評鑑系統整合</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="career-stage">
+                    <div class="career-stage-icon">長</div>
+                    <div class="career-stage-content">
+                        <h3>長期目標 (4-5年)</h3>
+                        <h4>角色：醫學教育創新研究者與跨域策略推動者</h4>
+                        <h4>目標：</h4>
+                        <ul>
+                            <li>建立AI教學模型政策建議與教學輔導平台指引</li>
+                            <li>推動醫學教育創新思維與實務</li>
+                        </ul>
+                        <h4>領域：</h4>
+                        <ul>
+                            <li>醫學教育制度改革政策（結合教學與與學生需求）</li>
+                            <li>國際醫學教育交流與合作模式</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 醫院學習型照護體系戰略 -->
+        <div class="tab-content" id="strategies">
+            <h2>4. 醫院學習型照護體系戰略部署以及推動策略</h2>
+            
+            <div class="strategy-section data-driven">
+                <h3><span class="strategy-icon">📊</span>資料驅動學習 (Data-driven Learning)</h3>
+                <ul>
+                    <li>應用AI與學習歷程數據進行學員表現追蹤與成效分析</li>
+                    <li>強化資料自動化（如PowerPlatform）</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-section education">
+                <h3><span class="strategy-icon">🎓</span>教學與知識傳遞 (Education & Knowledge Sharing)</h3>
+                <ul>
+                    <li>操作GenAI生成式影片課程，推廣教學技術</li>
+                    <li>建立培訓者社群，分享教育數位工具使用經驗</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-section collaboration">
+                <h3><span class="strategy-icon">🤝</span>協作與參與 (Stakeholder Engagement)</h3>
+                <ul>
+                    <li>促成跨部門（教學、資訊、行政）合作設計教案</li>
+                    <li>與院內導師協作建構反饋系統與教學改善機制</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-section system">
+                <h3><span class="strategy-icon">🔄</span>系統整合 (System Integration)</h3>
+                <ul>
+                    <li>整合GenAI至教學平台、Notion、SharePoint等工作流程</li>
+                    <li>推動學員自我回饋、教師追蹤的雙向互動機制</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-section improvement">
+                <h3><span class="strategy-icon">📈</span>持續改進 (Continuous Improvement)</h3>
+                <ul>
+                    <li>建立PDCA模式之課程改進循環</li>
+                    <li>推動QCC發表與成效追蹤制度</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-section global">
+                <h3><span class="strategy-icon">🌐</span>國際連結 (Global Perspective)</h3>
+                <ul>
+                    <li>持續參與AMEE等國際會議</li>
+                    <li>與國外學術團隊合作比較不同教育科技模式</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 人生第二曲線 -->
+        <div class="tab-content" id="second-curve">
+            <h2>5. 人生第二曲線（搭配醫院策略成長）</h2>
+            
+            <h3>第一曲線：目前的優勢與成就曲線</h3>
+            <div style="background-color: #e8f4fc; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                <div class="grid-container">
+                    <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
+                        <h4>醫學教育行政</h4>
+                        <p>熟悉PGY 訓練計畫、及課程規劃</p>
+                    </div>
+                    
+                    <div class="grid-item" style="background-color: rgba(52, 168, 83, 0.1); border-left: 4px solid var(--secondary-color);">
+                        <h4>數位工具整合</h4>
+                        <p>能操作 Power Automate、Forms、Power BI、自動化報表系統等</p>
+                    </div>
+                    
+                    <div class="grid-item" style="background-color: rgba(251, 188, 5, 0.1); border-left: 4px solid var(--tertiary-color);">
+                        <h4>生成式 AI 教學</h4>
+                        <p>操作 AI 生成式影片課程講師</p>
+                    </div>
+                    
+                    <div class="grid-item" style="background-color: rgba(234, 67, 53, 0.1); border-left: 4px solid var(--quaternary-color);">
+                        <h4>創意內容製作</h4>
+                        <p>能設計醫學教育影片、動畫腳本、貼圖與教育素材</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>第二曲線建構：培養與執行新角色的價值曲線</h3>
+            <div style="background-color: #e0f7fa; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                <div class="grid-container">
+                    <div class="grid-item" style="background-color: rgba(0, 150, 136, 0.1); border-left: 4px solid #009688;">
+                        <h4>跨院／國際醫學教育設計</h4>
+                        <p>從執行者→教育設計</p>
+                        <p>發展 AMEE 報告-參與國際投稿與工作坊設計-提高一套「AI教案設計」</p>
+                    </div>
+                    
+                    <div class="grid-item" style="background-color: rgba(103, 58, 183, 0.1); border-left: 4px solid #673ab7;">
+                        <h4>醫學教育創業家／產品開發者</h4>
+                        <p>從內容製作者→教學串連／平台開發者</p>
+                        <p>設計「互動教學」或「生成式醫教模組」，試行 Notion 或AI教材包</p>
+                    </div>
+                    
+                    <div class="grid-item" style="background-color: rgba(3, 169, 244, 0.1); border-left: 4px solid #03a9f4;">
+                        <h4>內部人才培育與領導力開發者</h4>
+                        <p>從教學推動者→組織變革催化者</p>
+                        <p>建立「醫學教育人才發展架構」，推動AI思維與心理安全的中層主管訓練課程</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 十年願景 -->
+        <div class="tab-content" id="vision">
+            <h2>6. 十年願景（以終為始回推 2025-2035）</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">🚀</div>
+                    <div class="timeline-year">2025-2026</div>
+                    <div class="timeline-title">啟動期</div>
+                    <p>建立個人品牌與專業聲量</p>
+                    <ul>
+                        <li>AMEE 學習成果轉化為院內課程與專案</li>
+                        <li>建立個人專頁／作品集</li>
+                        <li>成為院內AI課程設計的鮮明角色</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">📈</div>
+                    <div class="timeline-year">2026-2028</div>
+                    <div class="timeline-title">躍升期</div>
+                    <p>轉型為教育創新設計者</p>
+                    <ul>
+                        <li>完成碩士／發表研究成果（AI/教育/CBME）</li>
+                        <li>策劃開發一個教育模組（教材/平台）</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">🌐</div>
+                    <div class="timeline-year">2028-2030</div>
+                    <div class="timeline-title">拓展期</div>
+                    <p>從機構貢獻者→區域學習者</p>
+                    <ul>
+                        <li>設計教材工具包</li>
+                        <li>推動醫學教育創新</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">👑</div>
+                    <div class="timeline-year">2030-2035</div>
+                    <div class="timeline-title">影響期</div>
+                    <p>打造教育創新實驗場域品牌</p>
+                    <ul>
+                        <li>成立「AI醫學教育設計中心」</li>
+                        <li>成為教育數位轉型核心人物之一</li>
+                        <li>協助年輕醫師成長與職涯抉擇</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Why AMEE？ -->
+        <div class="tab-content" id="amee">
+            <h2>7. Why AMEE？（課程主題與成長曲線的搭配）</h2>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
+                    <h3>AI / Technology Enhanced Learning (TEL)</h3>
+                    <ul>
+                        <li>探索最新AI於個人化學習與臨床決策支援的實踐方式</li>
+                        <li>理解如何將數位學習融入醫學教育</li>
+                        <li>為之後提呈國際論文與課程升級提供最新趨勢與素材</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(52, 168, 83, 0.1); border-left: 4px solid var(--secondary-color);">
+                    <h3>Designing and Planning Learning (including curriculum)</h3>
+                    <ul>
+                        <li>更系統性地優化課程設計（從 needs assessment 到 curriculum mapping）</li>
+                        <li>將現有教案與學習活動建立國際對標與結構性升級</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(251, 188, 5, 0.1); border-left: 4px solid var(--tertiary-color);">
+                    <h3>Assessment and Feedback</h3>
+                    <ul>
+                        <li>業務視覺課程，但學習更進階的臨床評量工具（如 workplace-based assessment、CBME）將有助於未來設計標準化教案、跨院合作項目</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(234, 67, 53, 0.1); border-left: 4px solid var(--quaternary-color);">
+                    <h3>Supporting Learners</h3>
+                    <ul>
+                        <li>設計尊重制度，但可進一步學習如何建立心理安全感、減壓機制，促進學習動機的策略</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 職涯發展願景 -->
+        <div class="tab-content" id="career-vision">
+            <h2>8. 職涯發展願景</h2>
+            
+            <div class="career-vision">
+                <div class="vision-step">
+                    <h3>醫學教育創新研究者</h3>
+                </div>
+                <div class="vision-step">
+                    <h3>教育創新/學術型醫學教育者</h3>
+                </div>
+                <div class="vision-step">
+                    <h3>數位教育轉型推動者</h3>
+                </div>
+                <div class="vision-step">
+                    <h3>教學行政管理員（現職）</h3>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 結語 -->
+        <div class="tab-content" id="conclusion">
+            <h2>9. 結語</h2>
+            
+            <p>自2024年參加瑞士巴塞爾舉辦的歐洲醫學教育年會（AMEE）後，開始聚焦於數位轉型與生成式AI在醫學教育中的應用。完成了2場教學中心主辦影片教學課程，協助3場由藥劑部、護理部、營養科等單位自辦課程。並且以「Digital Skills Training Program for Healthcare Professionals: Practical Applications of Generative Video Production」為主題投稿AMEE。</p>
+            
+            <p>在數位賦能方面，學習Power Automate、Forms、SharePoint等整合性自動流的工具，實作了教師回饋導談單自動化表單、以及跨領域會議表單流程，並逐步形成一套可操作性與推廣可能性的教學模式作為未來教學課程規劃的基礎。</p>
+            
+            <p>若2025年再次參加歐洲醫學教育年會（AMEE），希望能進一步了解數位教學與AI應用的國際經驗，平台資源整合與學習成效追蹤，以應用於課程規劃與醫師培訓設計中。</p>
+        </div>
+        
+        <!-- 奇美AI Mentor建議 -->
+        <div class="tab-content" id="mentor">
+            <h2>10. 奇美AI Mentor建議</h2>
+            
+            <div class="mentor-tip">
+                <p>作為您的AI職涯顧問，我對您的職涯規劃提供以下建議：</p>
+            </div>
+            
+            <ol>
+                <li><strong>強化數據分析能力</strong>：考慮加強資料科學與分析技能，以支持您在資料驅動學習方面的目標。建議學習R或Python基礎，並掌握醫學教育數據視覺化工具。</li>
+                
+                <li><strong>建立跨域合作網絡</strong>：您的計劃需要跨部門協作，建議積極尋找院內資訊部門、臨床教學部門的合作夥伴，形成互補型專案團隊。</li>
+                
+                <li><strong>投資影片製作專業能力</strong>：既然生成式AI影片是您的核心競爭力之一，建議系統性學習影片腳本撰寫、教學設計原則和影片製作流程優化。</li>
+                
+                <li><strong>建立個人知識管理系統</strong>：使用Notion或類似工具建立您的教學資源庫和專案管理系統，將有助於第二曲線的發展。</li>
+                
+                <li><strong>差異化發展策略</strong>：醫學教育與AI結合是新興領域，建議找出獨特切入點（如特定臨床科別的AI教育方案），避免泛泛而論。</li>
+                
+                <li><strong>學習商業化思維</strong>：若長期目標包含產品開發，建議學習基本的商業模式設計、使用者研究方法，以確保開發的教育產品有實際使用價值。</li>
+                
+                <li><strong>制定明確里程碑</strong>：在十年願景中設立可衡量的階段性成果，如「完成X門課程設計」、「影響Y位醫師」，有助於追蹤進展。</li>
+                
+                <li><strong>平衡創新與實用</strong>：在追求AI創新的同時，確保解決方案切實解決醫學教育的痛點問題，保持教學內容的臨床相關性。</li>
+            </ol>
+            
+            <div class="mentor-tip">
+                <p>祝您職涯發展順利！</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
