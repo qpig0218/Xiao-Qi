@@ -91,7 +91,6 @@
             box-shadow: 0 4px 8px rgba(66, 133, 244, 0.3);
         }
         
-        /* 特殊樣式為奇美AI Mentor建議頁籤 */
         .tab-btn[data-tab="mentor"] {
             color: var(--mentor-color);
             border: 2px solid var(--mentor-color);
@@ -106,6 +105,22 @@
             background-color: var(--mentor-color);
             color: white;
             box-shadow: 0 4px 8px rgba(255, 112, 67, 0.3);
+        }
+        
+        .tab-btn[data-tab="coach"] {
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
+        
+        .tab-btn[data-tab="coach"]:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .tab-btn[data-tab="coach"].active {
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
         }
         
         .tab-content {
@@ -141,7 +156,6 @@
             padding-bottom: 10px;
         }
         
-        /* 奇美AI Mentor建議頁籤的特殊標題顏色 */
         #mentor h2 {
             color: var(--mentor-color);
             border-bottom: 2px solid var(--mentor-color);
@@ -172,7 +186,238 @@
         .tab-content li {
             margin-bottom: 8px;
         }
-        
+
+        /* Hashtag 樣式 */
+        .hashtag-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .hashtag-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .hashtag-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .hashtag-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hashtag-section h4 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        .hashtag-section ul {
+            margin-left: 15px;
+        }
+
+        .hashtag-section li {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* 個人特質表格樣式 */
+        .trait-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .trait-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .trait-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .trait-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .trait-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+
+        .trait-1 { background-color: #4285f4; }
+        .trait-2 { background-color: #34a853; }
+        .trait-3 { background-color: #fbbc05; }
+        .trait-4 { background-color: #9c27b0; }
+
+        /* 三階段發展重點樣式 */
+        .phase-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .phase-card {
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 20px var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+
+        .phase-card.initial {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+        }
+        .phase-card.initial::before {
+            background: var(--quaternary-color);
+        }
+
+        .phase-card.middle {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+        }
+        .phase-card.middle::before {
+            background: var(--tertiary-color);
+        }
+
+        .phase-card.long-term {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+        }
+        .phase-card.long-term::before {
+            background: var(--secondary-color);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .phase-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .phase-icon.initial { background: var(--quaternary-color); }
+        .phase-icon.middle { background: var(--tertiary-color); }
+        .phase-icon.long-term { background: var(--secondary-color); }
+
+        .phase-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark-text);
+        }
+
+        .phase-subtitle {
+            font-size: 1rem;
+            color: var(--medium-text);
+            margin-top: 5px;
+        }
+
+        .phase-content ul {
+            margin-left: 20px;
+        }
+
+        .phase-content li {
+            margin-bottom: 8px;
+            color: var(--medium-text);
+        }
+
+        /* 共同目標樣式 */
+        .goal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .goal-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .goal-card.goal-1 { border-left-color: #4285f4; }
+        .goal-card.goal-2 { border-left-color: #34a853; }
+        .goal-card.goal-3 { border-left-color: #fbbc05; }
+        .goal-card.goal-4 { border-left-color: #ea4335; }
+
+        .goal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .goal-check {
+            color: #34a853;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .goal-title {
+            font-weight: bold;
+            color: var(--dark-text);
+        }
+
+        /* 原有樣式保留 */
         .career-path {
             background-color: #f0f7ff;
             padding: 20px;
@@ -367,15 +612,6 @@
             color: var(--primary-color);
         }
         
-        .code-block {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            white-space: pre-wrap;
-            margin: 20px 0;
-        }
-        
         .mentor-tip {
             background-color: #fff3e0;
             border-left: 4px solid var(--mentor-color);
@@ -387,6 +623,255 @@
         .mentor-tip strong {
             color: var(--mentor-color);
         }
+
+        /* AI Coach 專用樣式 */
+        .coach-header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        .coach-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        .progress-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .career-track {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .track-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .management-track .track-title {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+        }
+
+        .professional-track .track-title {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+        }
+
+        .level-progression {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .level-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .level-item.current {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+        }
+
+        .level-item.completed {
+            border-color: #2196F3;
+            background: rgba(33, 150, 243, 0.1);
+        }
+
+        .level-item.future {
+            border-color: #e0e0e0;
+            background: #f9f9f9;
+            opacity: 0.7;
+        }
+
+        .level-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            color: white;
+        }
+
+        .level-item.current .level-number {
+            background: #4CAF50;
+        }
+
+        .level-item.completed .level-number {
+            background: #2196F3;
+        }
+
+        .level-item.future .level-number {
+            background: #bdbdbd;
+        }
+
+        .level-content h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+
+        .level-content p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .current-progress {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .progress-bar-container {
+            margin: 15px 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #66BB6A);
+            border-radius: 10px;
+            transition: width 0.8s ease;
+        }
+
+        .coach-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .coach-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .coach-section.task-oriented {
+            border-left: 5px solid #2196F3;
+        }
+
+        .coach-section.ai-tools {
+            border-left: 5px solid #9C27B0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .task-oriented .section-icon {
+            background: #2196F3;
+        }
+
+        .ai-tools .section-icon {
+            background: #9C27B0;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .action-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .action-items li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .action-items li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-size: 0.8rem;
+        }
+
+        .coach-recommendations {
+            background: linear-gradient(135deg, #fff3e0, #ffe8cc);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 5px solid #FF9800;
+        }
+
+        .coach-recommendations h3 {
+            color: #E65100;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .progress-container {
+                grid-template-columns: 1fr;
+            }
+
+            .coach-sections {
+                grid-template-columns: 1fr;
+            }
+        }
         
         @media (max-width: 768px) {
             .tabs {
@@ -396,6 +881,22 @@
             .tab-btn {
                 width: 100%;
                 text-align: center;
+            }
+            
+            .hashtag-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hashtag-content {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-container {
+                grid-template-columns: 1fr;
+            }
+
+            .goal-grid {
+                grid-template-columns: 1fr;
             }
             
             .timeline {
@@ -432,6 +933,10 @@
     <div class="container">
         <div class="tabs">
             <button class="tab-btn active" data-tab="profile">個人專業檔案</button>
+            <button class="tab-btn" data-tab="hashtags">我的 Hashtag</button>
+            <button class="tab-btn" data-tab="traits">個人特質分析</button>
+            <button class="tab-btn" data-tab="development-phases">三階段發展重點</button>
+            <button class="tab-btn" data-tab="shared-goals">共同實現目標</button>
             <button class="tab-btn" data-tab="competencies">核心競爭力</button>
             <button class="tab-btn" data-tab="goals">短中長期職涯目標</button>
             <button class="tab-btn" data-tab="strategies">醫院學習型照護體系戰略</button>
@@ -440,6 +945,7 @@
             <button class="tab-btn" data-tab="amee">Why AMEE?</button>
             <button class="tab-btn" data-tab="career-vision">職涯發展願景</button>
             <button class="tab-btn" data-tab="conclusion">結語</button>
+            <button class="tab-btn" data-tab="coach">AI Coach 職涯教練</button>
             <button class="tab-btn" data-tab="mentor">奇美AI Mentor建議</button>
         </div>
         
@@ -455,10 +961,309 @@
             <h3>背景簡介</h3>
             <p>作為一位醫學教育逾十年的教育引路人，致力於 PGY 訓練計畫、醫學教育系統建置及課程評鑑等工作。近年轉向數位轉型與人工智慧應用，積極參與生成式 AI 影片製作教學，以及國際醫學教育會議（如 AMEE）。2024年參加瑞士巴塞爾舉辦的歐洲醫學教育年會後，開始聚焦於數位轉型與生成式 AI 在醫學教育中的應用。</p>
         </div>
+
+        <!-- 我的 Hashtag -->
+        <div class="tab-content" id="hashtags">
+            <h2>2. 醫學教育中我的 Hashtag</h2>
+            
+            <div class="hashtag-container">
+                <div class="hashtag-card">
+                    <div class="hashtag-title"># PGY制度設計轉型者</div>
+                    <p style="color: white;">PGY制度從行政協調者到教案創新者，實踐孔實，近期從制度執行者轉型成制度創新者</p>
+                    
+                    <div class="hashtag-content">
+                        <div class="hashtag-section">
+                            <h4>核心能力與成就</h4>
+                            <ul>
+                                <li>專業經驗：</li>
+                                <li>• 超過十年 PGY 教學行政經驗</li>
+                                <li>• 熟悉醫師評核標準與實務評鑑標準</li>
+                                <li>創新能力：</li>
+                                <li>• 個人化學習(ILP)課程設計</li>
+                                <li>• 結合學習歷程檔案與 AI 工具</li>
+                                <li>• 現創PY TALK護談活動</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="hashtag-section">
+                            <h4>實踐方法與規劃</h4>
+                            <ul>
+                                <li>學術提升：</li>
+                                <li>• 進修碩士或證位</li>
+                                <li>• 研究主題：數位轉型下的醫學教育制度創新</li>
+                                <li>實踐應用：</li>
+                                <li>• 對內設計優化流程</li>
+                                <li>• 對外學程成方法論分享</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hashtag-card">
+                    <div class="hashtag-title"># 數位教學創新者</div>
+                    <p style="color: white;">能將AI與自動化工具應用於設計課程，教別人如何使用AI畫出作品，具備知識轉譯與實務技力</p>
+                    
+                    <div class="hashtag-content">
+                        <div class="hashtag-section">
+                            <h4>核心能力與成就</h4>
+                            <ul>
+                                <li>教學成果：</li>
+                                <li>• 擔任「AI影片課程」講師</li>
+                                <li>• 設計模組化教學流程</li>
+                                <li>• 帶領夥伴從零網需學會教育腳本</li>
+                                <li>• 協助完成AI影片作品產出</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="hashtag-section">
+                            <h4>實踐方法與規劃</h4>
+                            <ul>
+                                <li>持續學習：</li>
+                                <li>• 參與AI在醫學教育領域工作坊</li>
+                                <li>• 數位素養培訓課程進修</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hashtag-card">
+                    <div class="hashtag-title"># 醫學教育數位轉型推動者</div>
+                    <p style="color: white;">了解傳統醫學教育流程，也懂數位工具的價值，能夠從制度層面重新建構教學執行政流程</p>
+                    
+                    <div class="hashtag-content">
+                        <div class="hashtag-section">
+                            <h4>核心能力與成就</h4>
+                            <ul>
+                                <li>系統建置：</li>
+                                <li>• PGY長期追蹤系統設置系統</li>
+                                <li>• 教學門診時設系統</li>
+                                <li>• E-portfolio系統運營參與</li>
+                                <li>技術能力：</li>
+                                <li>• Power Automate、Power Apps</li>
+                                <li>• SharePoint串接自動化</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="hashtag-section">
+                            <h4>實踐方法與規劃</h4>
+                            <ul>
+                                <li>專案參與：</li>
+                                <li>• 全院數位賦能專案成員</li>
+                                <li>設計理念：</li>
+                                <li>• 使用者導向思維</li>
+                                <li>• 提升數位歷程的互動性、易用性提取同構性</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 個人特質分析 -->
+        <div class="tab-content" id="traits">
+            <h2>3. 醫學教育中個人特質 × 競爭優勢</h2>
+            
+            <table class="trait-table">
+                <thead>
+                    <tr>
+                        <th>個人特質</th>
+                        <th>競爭優勢</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="trait-icon trait-1">●</span>
+                            <strong>冷靜沉著、思考力</strong>
+                        </td>
+                        <td>在制度中尋找健全創新的外力入駐，透過理性分析與規劃觀察，提出具可執行性的改革方案，提升組織接受度與實務落地性。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="trait-icon trait-2">●</span>
+                            <strong>抗壓力與善於溝通力</strong>
+                        </td>
+                        <td>能在高壓與複雜情境中沉著應對，有效清通協調，建立組織信任感與跨部門合作默契。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="trait-icon trait-3">●</span>
+                            <strong>穩定應變能力與跨領域連結能力</strong>
+                        </td>
+                        <td>具備穩定推動導領的能力，即便面對阻生場域（如跨院或國際合作）也能迅速建立關係，擴展視野與影響力。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="trait-icon trait-4">●</span>
+                            <strong>持續學習力與數位轉型適應力</strong>
+                        </td>
+                        <td>具備韌性與運轉思維，能從使用者轉型為推廣者，成為組織內部的數位轉型的種子教師。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>醫學教育中個人特質 × 團隊內的安全感</h3>
+            
+            <table class="trait-table">
+                <thead>
+                    <tr>
+                        <th>個人特質</th>
+                        <th>具體表現</th>
+                        <th>對團隊的意義與安心感</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="trait-icon trait-1">●</span>
+                            <strong>冷靜沉著、穩定不慌亂</strong>
+                        </td>
+                        <td>面對制度變革、突發事件或高壓情境，總能冷靜、沉著回應，避免情緒化決策。</td>
+                        <td>「有條理應對，即使情況複雜也不會失控。」</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="trait-icon trait-2">●</span>
+                            <strong>抗壓性與責任感兼具</strong>
+                        </td>
+                        <td>執行教學制度設計、課程推動、跨部門協調等高壓工作多年，仍持續穩定執行。</td>
+                        <td>「可靠、扛得住、不會中途放棄或推託。」</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="trait-icon trait-3">●</span>
+                            <strong>持續學習與數位轉型的能力</strong>
+                        </td>
+                        <td>主動學習 Power Automate、AI 工具，並落實在工作中，提升整體流程效率。</td>
+                        <td>「在團隊數位轉型過程中帶頭學習，減少團隊對新科技的焦慮。」</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="trait-icon trait-4">●</span>
+                            <strong>共同成長與合作精神</strong>
+                        </td>
+                        <td>在AI生成式影片、PowerAutomate帶領團隊夥伴一同學習</td>
+                        <td>「給予支持是可以一起成長的夥伴」</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 三階段發展重點 -->
+        <div class="tab-content" id="development-phases">
+            <h2>4. 三階段發展重點</h2>
+            
+            <div class="phase-container">
+                <div class="phase-card initial">
+                    <div class="phase-header">
+                        <div class="phase-icon initial">初期</div>
+                        <div>
+                            <div class="phase-title">初期發展階段</div>
+                            <div class="phase-subtitle">累積專業能力</div>
+                        </div>
+                    </div>
+                    
+                    <h4>📚 專業進修與能力建立</h4>
+                    <div class="phase-content">
+                        <ul>
+                            <li>參與醫學教育相關課程或工作坊</li>
+                            <li>建立孔實的教學理論基礎</li>
+                            <li>觀摩與學習優秀教師經驗</li>
+                            <li>持續更新醫學教育發展趨勢</li>
+                            <li>建立個人學習成長檔案</li>
+                            <li>參與院內專案小組</li>
+                            <li>增任理論的主題講者</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase-card middle">
+                    <div class="phase-header">
+                        <div class="phase-icon middle">中期</div>
+                        <div>
+                            <div class="phase-title">中期發展階段</div>
+                            <div class="phase-subtitle">學術能見度建立</div>
+                        </div>
+                    </div>
+                    
+                    <h4>🎯 學術發表與研究成果</h4>
+                    <div class="phase-content">
+                        <ul>
+                            <li>投稿醫學教育相關期刊論文</li>
+                            <li>撰寫教學創新與實務文章</li>
+                            <li>發表學術研究與教學研究</li>
+                            <li>參與學術者流發表研究成果</li>
+                            <li>建立完整的個人學術檔案</li>
+                            <li>申請研究計畫與經費</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase-card long-term">
+                    <div class="phase-header">
+                        <div class="phase-icon long-term">長期</div>
+                        <div>
+                            <div class="phase-title">長期發展階段</div>
+                            <div class="phase-subtitle">個人專業品牌</div>
+                        </div>
+                    </div>
+                    
+                    <h4>🌐 品牌建立與影響力擴展</h4>
+                    <div class="phase-content">
+                        <ul>
+                            <li>建立跨院所專業合作網絡</li>
+                            <li>發展彼地區醫學教育聯盟</li>
+                            <li>權任參與AMEE等國際醫學教育會議</li>
+                            <li>權任重要會議的主題講者與主持人</li>
+                            <li>建立國際學術合作與交流網絡</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 期待與醫院共同實現的目標 -->
+        <div class="tab-content" id="shared-goals">
+            <h2>5. 期待與醫院共同實現的目標</h2>
+            
+            <div class="goal-grid">
+                <div class="goal-card goal-1">
+                    <div class="goal-header">
+                        <div class="goal-check">✓</div>
+                        <div class="goal-title">教育碩士或課程進修</div>
+                    </div>
+                    <p>進修學習醫學教育政策應用維，回院後可設計更具前瞻性的制度改革</p>
+                </div>
+
+                <div class="goal-card goal-2">
+                    <div class="goal-header">
+                        <div class="goal-check">✓</div>
+                        <div class="goal-title">參與AMEE醫學教育年會</div>
+                    </div>
+                    <p>學習全台/全球醫學教育專家的課程設計理念與實務經驗，提升教學制度設計的廣度與深度</p>
+                </div>
+
+                <div class="goal-card goal-3">
+                    <div class="goal-header">
+                        <div class="goal-check">✓</div>
+                        <div class="goal-title">數位課程支持</div>
+                    </div>
+                    <p>精進我在數位賦能的能力，可應用於院內推動數位賦能教學發展（例如工研院數學課程）</p>
+                </div>
+
+                <div class="goal-card goal-4">
+                    <div class="goal-header">
+                        <div class="goal-check">✓</div>
+                        <div class="goal-title">跨院合作機制</div>
+                    </div>
+                    <p>與他院聯合開課，從「院內推手」成為「跨院申連者」，逐步擴展影響力</p>
+                </div>
+            </div>
+        </div>
         
         <!-- 核心競爭力 -->
         <div class="tab-content" id="competencies">
-            <h2>2. 核心競爭力</h2>
+            <h2>6. 核心競爭力</h2>
             
             <div class="grid-container">
                 <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
@@ -498,7 +1303,7 @@
         
         <!-- 短中長期職涯目標 -->
         <div class="tab-content" id="goals">
-            <h2>3. 短中長期職涯目標</h2>
+            <h2>7. 短中長期職涯目標</h2>
             
             <div class="career-path">
                 <div class="career-stage">
@@ -560,7 +1365,7 @@
         
         <!-- 醫院學習型照護體系戰略 -->
         <div class="tab-content" id="strategies">
-            <h2>4. 醫院學習型照護體系戰略部署以及推動策略</h2>
+            <h2>8. 醫院學習型照護體系戰略部署以及推動策略</h2>
             
             <div class="strategy-section data-driven">
                 <h3><span class="strategy-icon">📊</span>資料驅動學習 (Data-driven Learning)</h3>
@@ -613,7 +1418,7 @@
         
         <!-- 人生第二曲線 -->
         <div class="tab-content" id="second-curve">
-            <h2>5. 人生第二曲線（搭配醫院策略成長）</h2>
+            <h2>9. 人生第二曲線（搭配醫院策略成長）</h2>
             
             <h3>第一曲線：目前的優勢與成就曲線</h3>
             <div style="background-color: #e8f4fc; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
@@ -666,7 +1471,7 @@
         
         <!-- 十年願景 -->
         <div class="tab-content" id="vision">
-            <h2>6. 十年願景（以終為始回推 2025-2035）</h2>
+            <h2>10. 十年願景（以終為始回推 2025-2035）</h2>
             
             <div class="timeline">
                 <div class="timeline-item">
@@ -719,7 +1524,7 @@
         
         <!-- Why AMEE？ -->
         <div class="tab-content" id="amee">
-            <h2>7. Why AMEE？（課程主題與成長曲線的搭配）</h2>
+            <h2>11. Why AMEE？（課程主題與成長曲線的搭配）</h2>
             
             <div class="grid-container">
                 <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
@@ -757,7 +1562,7 @@
         
         <!-- 職涯發展願景 -->
         <div class="tab-content" id="career-vision">
-            <h2>8. 職涯發展願景</h2>
+            <h2>12. 職涯發展願景</h2>
             
             <div class="career-vision">
                 <div class="vision-step">
@@ -777,7 +1582,7 @@
         
         <!-- 結語 -->
         <div class="tab-content" id="conclusion">
-            <h2>9. 結語</h2>
+            <h2>13. 結語</h2>
             
             <p>自2024年參加瑞士巴塞爾舉辦的歐洲醫學教育年會（AMEE）後，開始聚焦於數位轉型與生成式AI在醫學教育中的應用。完成了2場教學中心主辦影片教學課程，協助3場由藥劑部、護理部、營養科等單位自辦課程。並且以「Digital Skills Training Program for Healthcare Professionals: Practical Applications of Generative Video Production」為主題投稿AMEE。</p>
             
@@ -786,9 +1591,228 @@
             <p>若2025年再次參加歐洲醫學教育年會（AMEE），希望能進一步了解數位教學與AI應用的國際經驗，平台資源整合與學習成效追蹤，以應用於課程規劃與醫師培訓設計中。</p>
         </div>
         
+        
+        <!-- AI Coach 職涯教練 -->
+        <div class="tab-content" id="coach">
+            <div class="coach-header">
+                <h2 style="color: white;">🤖 AI Coach 職涯教練</h2>
+                <div class="coach-subtitle">
+                    🎯 減輕認知負擔 • 識別弱弱項 • 個人化進度追蹤 • 提升自主學習 • 培養終身學習習慣<br>
+                    AI智慧陪跑，實現能力本位醫學教育行政管理目標
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <!-- 管理職務晉升軌道 -->
+                <div class="career-track management-track">
+                    <div class="track-title">管理職務晉升</div>
+                    <div class="level-progression">
+                        <div class="level-item completed">
+                            <div class="level-number">1</div>
+                            <div class="level-content">
+                                <h4>基層行政</h4>
+                                <p>教學行政管理員（已完成）</p>
+                            </div>
+                        </div>
+                        <div class="level-item current">
+                            <div class="level-number">2</div>
+                            <div class="level-content">
+                                <h4>小組長</h4>
+                                <p>專案小組領導經驗累積中</p>
+                            </div>
+                        </div>
+                        <div class="level-item future">
+                            <div class="level-number">3</div>
+                            <div class="level-content">
+                                <h4>副組長</h4>
+                                <p>跨部門協調與管理能力</p>
+                            </div>
+                        </div>
+                        <div class="level-item future">
+                            <div class="level-number">4</div>
+                            <div class="level-content">
+                                <h4>組長/專員</h4>
+                                <p>團隊管理與策略規劃</p>
+                            </div>
+                        </div>
+                        <div class="level-item future">
+                            <div class="level-number">5</div>
+                            <div class="level-content">
+                                <h4>高級專員</h4>
+                                <p>政策制定與組織發展</p>
+                            </div>
+                        </div>
+                        <div class="level-item future">
+                            <div class="level-number">6</div>
+                            <div class="level-content">
+                                <h4>主任/副主任</h4>
+                                <p>全面領導與策略決策</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 專業能力進階軌道 -->
+                <div class="career-track professional-track">
+                    <div class="track-title">專業能力進階 (M1-M8)</div>
+                    <div class="level-progression">
+                        <div class="level-item completed">
+                            <div class="level-number">M1</div>
+                            <div class="level-content">
+                                <h4>基礎行政能力</h4>
+                                <p>熟悉PGY制度與評鑑流程</p>
+                            </div>
+                        </div>
+                        <div class="level-item completed">
+                            <div class="level-number">M2</div>
+                            <div class="level-content">
+                                <h4>系統操作能力</h4>
+                                <p>數位工具與自動化流程</p>
+                            </div>
+                        </div>
+                        <div class="level-item current">
+                            <div class="level-number">M3</div>
+                            <div class="level-content">
+                                <h4>創新應用能力</h4>
+                                <p>AI教學工具整合應用中</p>
+                            </div>
+                        </div>
+                        <div class="level-item future">
+                            <div class="level-number">M4</div>
+                            <div class="level-content">
+                                <h4>課程設計能力</h4>
+                                <p>教育理論與實務結合</p>
+                            </div>
+                        </div>
+                        <div class="level-item future">
+                            <div class="level-number">M5</div>
+                            <div class="level-content">
+                                <h4>研究發展能力</h4>
+                                <p>學術論文與專案研究</p>
+                            </div>
+                        </div>
+                        <div class="level-item future">
+                            <div class="level-number">M6</div>
+                            <div class="level-content">
+                                <h4>跨域整合能力</h4>
+                                <p>國際合作與交流</p>
+                            </div>
+                        </div>
+                        <div class="level-item future">
+                            <div class="level-number">M7</div>
+                            <div class="level-content">
+                                <h4>策略規劃能力</h4>
+                                <p>政策制定與組織變革</p>
+                            </div>
+                        </div>
+                        <div class="level-item future">
+                            <div class="level-number">M8</div>
+                            <div class="level-content">
+                                <h4>領導創新能力</h4>
+                                <p>行業標準建立與推廣</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 目前進度 -->
+            <div class="current-progress">
+                <h3>📊 目前進度追蹤</h3>
+                
+                <div class="progress-bar-container">
+                    <div class="progress-label">
+                        <span>專業能力進階：M3 創新應用能力</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-label">
+                        <span>管理職務發展：小組長層級</span>
+                        <span>45%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 教練指導區塊 -->
+            <div class="coach-sections">
+                <!-- 任務導向設計 -->
+                <div class="coach-section task-oriented">
+                    <div class="section-header">
+                        <div class="section-icon">🎯</div>
+                        <div class="section-title">任務導向設計</div>
+                    </div>
+                    <ul class="action-items">
+                        <li>將短期目標細分成明確任務</li>
+                        <li>完成AMEE投稿論文修訂</li>
+                        <li>建立AI影片教學標準流程</li>
+                        <li>設計跨部門合作專案提案</li>
+                        <li>完成Power Platform進階認證</li>
+                        <li>建立個人教學作品集網站</li>
+                        <li>申請教育相關研習課程</li>
+                        <li>建立院內AI應用推廣計畫</li>
+                    </ul>
+                </div>
+
+                <!-- AI工具協助 -->
+                <div class="coach-section ai-tools">
+                    <div class="section-header">
+                        <div class="section-icon">🛠️</div>
+                        <div class="section-title">AI工具協助</div>
+                    </div>
+                    <ul class="action-items">
+                        <li>課程設計：ChatGPT輔助教案規劃</li>
+                        <li>影片製作：Suno AI音樂與配音</li>
+                        <li>數據分析：Power BI + AI視覺化</li>
+                        <li>文件撰寫：Grammarly學術寫作</li>
+                        <li>專案管理：Notion AI任務自動化</li>
+                        <li>學習追蹤：AI學習歷程分析</li>
+                        <li>全程：AI定期提供個人化回饋</li>
+                        <li>全程：AI導航儀表板進度監測</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 教練建議 -->
+            <div class="coach-recommendations">
+                <h3>🏃‍♀️ AI教練即時建議</h3>
+                
+                <h4>本週重點任務（優先級排序）</h4>
+                <ol>
+                    <li><strong>完成AMEE論文修訂</strong> - 截止日期：本月底，建議每日投入2小時</li>
+                    <li><strong>設計AI影片教學工作坊</strong> - 下週開始籌備，預計需要3週準備時間</li>
+                    <li><strong>建立跨部門專案提案</strong> - 與資訊部、護理部初步討論合作可能</li>
+                    <li><strong>學習進階Power Automate功能</strong> - 每週至少練習4小時</li>
+                </ol>
+
+                <h4>避免常見誤區</h4>
+                <ul>
+                    <li>❌ 避免同時啟動過多專案，建議專注完成2-3個核心項目</li>
+                    <li>❌ 不要忽略建立個人品牌，定期在內部分享學習成果</li>
+                    <li>❌ 避免技術學習脫離實際應用場景</li>
+                    <li>❌ 不要低估跨部門溝通的時間成本，提前做好協調規劃</li>
+                </ul>
+
+                <h4>能力提升建議</h4>
+                <ul>
+                    <li>✅ 建議參加「教育科技應用」相關研習，強化理論基礎</li>
+                    <li>✅ 尋找院內mentor，獲得管理職務發展的實務指導</li>
+                    <li>✅ 建立學習社群，與其他醫學教育工作者交流經驗</li>
+                    <li>✅ 定期檢視與調整個人發展計畫，保持彈性應對變化</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- 奇美AI Mentor建議 -->
         <div class="tab-content" id="mentor">
-            <h2>10. 奇美AI Mentor建議</h2>
+            <h2>14. 奇美AI Mentor建議</h2>
             
             <div class="mentor-tip">
                 <p>作為您的AI職涯顧問，我對您的職涯規劃提供以下建議：</p>
